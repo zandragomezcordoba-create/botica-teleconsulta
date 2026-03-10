@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Login - Botica Teleconsulta</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1565c0">
+
+<link rel="stylesheet" href="css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+
+body{
+background-image:url("img/login-fondo.png");
+background-size:cover;
+background-position:center;
+height:100vh;
+margin:0;
+}
+
+.overlay{
+background:rgba(255,255,255,0.85);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.login-card{
+width:420px;
+padding:35px;
+border-radius:15px;
+text-align:center;
+}
+
+.logo{
+height:90px;
+margin-bottom:10px;
+}
+
+.titulo{
+color:#1565c0;
+font-weight:bold;
+}
+
+.btn-login{
+background:#1565c0;
+width:100%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="card login-card">
+
+<img src="img/logo-botica.png" class="logo">
+
+<h5 class="titulo">Sistema de Teleconsulta Rural</h5>
+
+<p>Botica Comunitaria</p>
+
+<div class="input-field">
+<input type="text" id="usuario">
+<label>Usuario</label>
+</div>
+
+<div class="input-field">
+<input type="password" id="password">
+<label>Contraseña</label>
+</div>
+
+<a href="dashboard.html" class="btn btn-login">
+Ingresar
+</a>
+
+</div>
+
+</div>
+
+<script src="js/materialize.min.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+  .then(function() {
+    console.log("Service Worker registrado");
+  });
+}
+</script>
+
+</body>
+</html>

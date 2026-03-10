@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Dashboard - Botica Teleconsulta</title>
+
+<link rel="stylesheet" href="css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+
+body{
+background-image:url("img/login-fondo.png");
+background-size:cover;
+background-position:center;
+margin:0;
+font-family:Arial;
+}
+
+.overlay{
+background:rgba(255,255,255,0.92);
+min-height:100vh;
+}
+
+/* MENU LATERAL */
+
+.sidenav{
+width:270px;
+background:#1565c0;   /* AZUL */
+padding-top:20px;
+}
+
+/* LOGO */
+
+.menu-header{
+text-align:center;
+color:white;
+margin-bottom:20px;
+}
+
+.logo{
+width:110px;
+margin-bottom:10px;
+}
+
+/* RECUADROS DEL MENU */
+
+.menu-box{
+background:white;
+margin:10px 15px;
+border-radius:10px;
+}
+
+.menu-box a{
+display:block;
+padding:12px;
+color:#1565c0;
+font-weight:bold;
+}
+
+.menu-box i{
+margin-right:10px;
+color:#1565c0;
+}
+
+.menu-box:hover{
+background:#e3f2fd;
+}
+
+/* CONTENIDO */
+
+main{
+margin-left:270px;
+padding:60px;
+text-align:center;
+}
+
+.titulo{
+color:#1565c0;
+font-weight:bold;
+}
+
+.descripcion{
+font-size:18px;
+color:#555;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<!-- MENU LATERAL -->
+
+<ul class="sidenav sidenav-fixed">
+
+<li class="menu-header">
+
+<img src="img/logo-botica.png" class="logo">
+
+<h6>Botica Teleconsulta</h6>
+
+</li>
+
+<li class="menu-box">
+<a href="registro.html">
+<i class="material-icons">people</i>
+Pacientes
+</a>
+</li>
+
+<li class="menu-box">
+<a href="medicamentos.html">
+<i class="material-icons">local_pharmacy</i>
+Medicamentos
+</a>
+</li>
+
+<li class="menu-box">
+<a href="teleconsulta.html">
+<i class="material-icons">video_call</i>
+Teleconsulta
+</a>
+</li>
+
+<li class="menu-box">
+<a href="reportes.html">
+<i class="material-icons">assessment</i>
+Reportes
+</a>
+</li>
+
+<li class="menu-box">
+<a href="index.html">
+<i class="material-icons">logout</i>
+Cerrar Sesión
+</a>
+</li>
+
+</ul>
+
+<!-- CONTENIDO -->
+
+<main>
+
+<h4 class="titulo">Bienvenido al Sistema de Teleconsulta Rural</h4>
+
+<p class="descripcion">
+
+Seleccione una opción del menú para gestionar pacientes, medicamentos  
+y realizar teleconsultas médicas.
+
+</p>
+
+</main>
+
+</div>
+
+<script src="js/materialize.min.js"></script>
+
+</body>
+
+</html>
