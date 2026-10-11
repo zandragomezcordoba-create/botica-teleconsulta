@@ -1,87 +1,229 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Pacientes - Botica Teleconsulta</title>
 
-<meta charset="UTF-8">
-<title>Pacientes</title>
+    <link rel="stylesheet" href="css/materialize.min.css">
 
-<link rel="stylesheet" href="css/materialize.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("img/login-fondo.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
 
-<style>
+        .overlay {
+            background: rgba(255, 255, 255, 0.10);
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-body{
-background-image:url("img/login-fondo.png");
-background-size:cover;
-}
+        nav {
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
 
-.overlay{
-background:rgba(255,255,255,0.9);
-min-height:100vh;
-padding:20px;
-}
+        .brand-logo {
+            display: flex !important;
+            align-items: center;
+            gap: 12px;
+            white-space: nowrap;
+        }
 
-.logo{
-height:50px;
-}
+        .logo {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
 
-</style>
+        .contenido {
+            max-width: 725px;
+            margin: 30px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.30);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+            box-sizing: border-box;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+        }
 
+        h4 {
+            color: #0D47A1;
+            margin: 15px 0 30px;
+        }
+
+        .campo {
+            margin-bottom: 22px;
+        }
+
+        .campo label {
+            display: block;
+            position: static !important;
+            transform: none !important;
+            color: #424242 !important;
+            font-size: 14px !important;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .campo input[type="text"] {
+            display: block;
+            box-sizing: border-box !important;
+            width: 100% !important;
+            height: 42px !important;
+            margin: 0 !important;
+            padding: 0 10px !important;
+            border: 1px solid #bdbdbd !important;
+            border-radius: 5px !important;
+            background: rgba(255, 255, 255, 0.65) !important;
+            box-shadow: none !important;
+        }
+
+        .campo input[type="text"]:focus {
+            border: 1px solid #1976D2 !important;
+            box-shadow: 0 1px 0 0 #1976D2 !important;
+        }
+
+        .botones {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .mensaje {
+            display: none;
+            margin-top: 20px;
+            padding: 12px;
+            background: rgba(224, 242, 241, 0.90);
+            color: #00695c;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .overlay {
+                padding: 12px;
+            }
+
+            .contenido {
+                padding: 20px;
+                margin-top: 20px;
+            }
+
+            .brand-logo {
+                font-size: 18px !important;
+            }
+
+            .logo {
+                height: 35px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <div class="overlay">
 
-<div class="overlay">
+        <nav class="blue darken-2">
+            <div class="nav-wrapper container">
+                <a href="panel.html" class="brand-logo">
+                    <img
+                        src="img/logo-botica.png"
+                        class="logo"
+                        alt="Logo Botica Teleconsulta">
+                    <span>Botica Teleconsulta</span>
+                </a>
+            </div>
+        </nav>
 
-<nav class="blue darken-2">
+        <main class="contenido">
+            <h4>Registro de Pacientes</h4>
 
-<div class="nav-wrapper container">
+            <form id="formularioPaciente">
 
-<a class="brand-logo">
+                <div class="campo">
+                    <label for="nombre">Nombre del paciente</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        autocomplete="name"
+                        required>
+                </div>
 
-<img src="img/logo-botica.png" class="logo">
+                <div class="campo">
+                    <label for="documento">Documento</label>
+                    <input
+                        type="text"
+                        id="documento"
+                        name="documento"
+                        required>
+                </div>
 
-Botica Teleconsulta
+                <div class="campo">
+                    <label for="telefono">Teléfono</label>
+                    <input
+                        type="text"
+                        id="telefono"
+                        name="telefono"
+                        autocomplete="tel"
+                        required>
+                </div>
 
-</a>
+                <div class="campo">
+                    <label for="direccion">Dirección rural</label>
+                    <input
+                        type="text"
+                        id="direccion"
+                        name="direccion"
+                        autocomplete="street-address"
+                        required>
+                </div>
 
-<ul class="right">
-<li><a href="dashboard.html">Volver</a></li>
-</ul>
+                <div class="botones">
+                    <button type="submit" class="btn blue darken-2">
+                        Guardar Paciente
+                    </button>
 
-</div>
+                    <a href="panel.html" class="btn grey darken-1">
+                        Volver
+                    </a>
+                </div>
 
-</nav>
+                <div
+                    id="mensaje"
+                    class="mensaje"
+                    role="status"
+                    aria-live="polite">
+                </div>
 
-<div class="container">
+            </form>
+        </main>
+    </div>
 
-<h4>Registro de Pacientes</h4>
+    <script>
+        document
+            .getElementById("formularioPaciente")
+            .addEventListener("submit", function(event) {
 
-<div class="input-field">
-<input type="text">
-<label>Nombre del paciente</label>
-</div>
+                event.preventDefault();
 
-<div class="input-field">
-<input type="text">
-<label>Documento</label>
-</div>
+                const mensaje = document.getElementById("mensaje");
 
-<div class="input-field">
-<input type="text">
-<label>Teléfono</label>
-</div>
-
-<div class="input-field">
-<input type="text">
-<label>Dirección rural</label>
-</div>
-
-<a class="btn blue darken-2">Guardar Paciente</a>
-
-</div>
-
-</div>
-
+                mensaje.style.display = "block";
+                mensaje.textContent =
+                    "Formulario completado. Los datos no se guardan permanentemente porque falta conectar el sistema de almacenamiento.";
+            });
+    </script>
 </body>
 </html>
+```
